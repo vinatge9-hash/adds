@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>WhatsApp Clone - Settings</title>
+  <meta name='description' content='Settings for the WhatsApp clone MVP.'>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class='bg-gray-50 text-gray-800'>
+  <nav class='bg-white border-b border-gray-200'>
+    <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div class='flex items-center justify-between h-16'>
+        <a href='index.html' class='text-xl font-semibold text-gray-900'>WhatsApp Clone</a>
+        <div class='hidden md:flex space-x-4'>
+          <a href='index.html' class='text-gray-600 hover:text-gray-900'>Chats</a>
+          <a href='contacts.html' class='text-gray-600 hover:text-gray-900'>Contacts</a>
+          <a href='settings.html' class='text-gray-600 hover:text-gray-900'>Settings</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class='max-w-5xl mx-auto p-6'>
+    <h1 class='text-2xl font-semibold mb-4'>Settings</h1>
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
+      <section class='p-4 border rounded-lg bg-white'>
+        <h2 class='text-lg font-semibold mb-2'>General</h2>
+        <div class='flex items-center justify-between mb-2'>
+          <span>Dark Mode</span>
+          <button class='px-3 py-1 rounded-full bg-gray-200'>Off</button>
+        </div>
+        <div class='flex items-center justify-between'>
+          <span>Message Preview</span>
+          <button class='px-3 py-1 rounded-full bg-gray-200'>On</button>
+        </div>
+      </section>
+      <section class='p-4 border rounded-lg bg-white'>
+        <h2 class='text-lg font-semibold mb-2'>Data & Backups</h2>
+        <div class='flex items-center justify-between mb-2'>
+          <span>Chat Backup</span>
+          <button class='px-3 py-1 rounded-full bg-gray-200'>Enabled</button>
+        </div>
+        <div class='flex items-center justify-between'>
+          <span>Storage</span>
+          <span class='text-sm text-gray-500'>5.2 MB</span>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
