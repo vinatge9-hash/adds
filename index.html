@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>WhatsApp Clone - MVP (1:1 Chat)</title>
+  <meta name='description' content='A minimal WhatsApp-like MVP with 1:1 text chat and image/file sharing using mock data.'>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class='bg-gray-50 text-gray-800'>
+  <!-- Top Navigation -->
+  <nav class='bg-white border-b border-gray-200'>
+    <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div class='flex items-center justify-between h-16'>
+        <a href='index.html' class='text-xl font-semibold text-gray-900'>WhatsApp Clone</a>
+        <div class='hidden md:flex space-x-4'>
+          <a href='index.html' class='text-gray-600 hover:text-gray-900'>Chats</a>
+          <a href='contacts.html' class='text-gray-600 hover:text-gray-900'>Contacts</a>
+          <a href='settings.html' class='text-gray-600 hover:text-gray-900'>Settings</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class='flex h-screen'>
+    <!-- Left: Conversations List -->
+    <aside class='w-80 border-r border-gray-200 bg-white overflow-y-auto'>
+      <div class='p-4'>
+        <div class='flex items-center space-x-2'>
+          <span class='inline-block w-8 h-8 rounded-full bg-green-500'></span>
+          <span class='font-semibold'>Chats</span>
+        </div>
+      </div>
+      <div class='px-2 py-1'>
+        <!-- Mock chat items -->
+        <div class='flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer'>
+          <img src='https://via.placeholder.com/40' alt='Avatar of Alice' class='w-10 h-10 rounded-full object-cover'>
+          <div class='ml-3 truncate'>
+            <div class='text-sm font-medium'>Alice Johnson</div>
+            <div class='text-xs text-gray-500 truncate'>Hey there! Ready for the mock chat?</div>
+          </div>
+          <span class='text-xs text-gray-500 ml-auto'>2:15 PM</span>
+        </div>
+
+        <div class='flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer'>
+          <img src='https://via.placeholder.com/40' alt='Avatar of Bob' class='w-10 h-10 rounded-full object-cover'>
+          <div class='ml-3 truncate'>
+            <div class='text-sm font-medium'>Bob Lee</div>
+            <div class='text-xs text-gray-500 truncate'>Check this file I mentioned</div>
+          </div>
+          <span class='text-xs text-gray-500 ml-auto'>1:40 PM</span>
+        </div>
+
+        <div class='flex items-center p-2 rounded hover:bg-gray-100 cursor-pointer'>
+          <img src='https://via.placeholder.com/40' alt='Avatar of Maria' class='w-10 h-10 rounded-full object-cover'>
+          <div class='ml-3 truncate'>
+            <div class='text-sm font-medium'>Maria Gomez</div>
+            <div class='text-xs text-gray-500 truncate'>Family chat</div>
+          </div>
+          <span class='text-xs text-gray-500 ml-auto'>12:05 PM</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right: Chat Window -->
+    <main class='flex-1 flex flex-col'>
+      <header class='flex items-center justify-between p-4 bg-white border-b border-gray-200'>
+        <div class='flex items-center space-x-3'>
+          <img src='https://via.placeholder.com/40' alt='Alice avatar' class='w-10 h-10 rounded-full object-cover'>
+          <div>
+            <div class='font-semibold'>Alice Johnson</div>
+            <div class='text-xs text-gray-500'>Online</div>
+          </div>
+        </div>
+        <div class='flex items-center space-x-2'>
+          <button class='p-2 rounded-full hover:bg-gray-100' aria-label='Search'>🔎</button>
+          <button class='p-2 rounded-full hover:bg-gray-100' aria-label='More options'>⋮</button>
+        </div>
+      </header>
+
+      <section id='messages' class='flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50'>
+        <!-- Message from Alice (left) -->
+        <div class='flex items-end'>
+          <img src='https://via.placeholder.com/40' alt='Alice avatar' class='w-8 h-8 rounded-full mr-2'>
+          <div class='max-w-xs bg-white p-3 rounded-lg shadow'>
+            <p class='text-sm'>Hey there! This is a mock WhatsApp chat.</p>
+            <span class='text-xs text-gray-400'>10:12 AM</span>
+          </div>
+        </div>
+
+        <!-- Message from You (right) -->
+        <div class='flex items-end justify-end'>
+          <div class='max-w-xs bg-green-500 text-white p-3 rounded-lg shadow'>
+            <p class='text-sm'>Nice! 1:1 chat with image sharing works.</p>
+            <span class='text-xs text-green-100'>10:13 AM</span>
+          </div>
+        </div>
+
+        <!-- Image message from Alice -->
+        <div class='flex items-end'>
+          <img src='https://via.placeholder.com/40' alt='Alice avatar' class='w-8 h-8 rounded-full mr-2'>
+          <div class='max-w-xs bg-white p-2 rounded-lg shadow'>
+            <img src='https://via.placeholder.com/240x160.png?text=Photo' alt='Alice sent an image: sunset over city' class='rounded-md w-full'>
+            <span class='text-xs text-gray-500 block mt-1'>sunset.jpg</span>
+          </div>
+        </div>
+
+        <!-- File shared by You -->
+        <div class='flex items-end justify-end'>
+          <div class='max-w-xs bg-green-500 text-white p-3 rounded-lg shadow flex items-center space-x-2'>
+            <span>📎</span>
+            <span class='text-sm'>report.pdf</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class='p-4 border-t border-gray-200 bg-white'>
+        <form id='composer' class='flex items-center space-x-2'>
+          <button type='button' id='attachBtn' class='p-2 rounded-full hover:bg-gray-100' aria-label='Attach file'>🔗</button>
+          <input id='textInput' class='flex-1 border border-gray-300 rounded-full px-4 py-2 focus:outline-none' type='text' placeholder='Message'>
+          <button type='submit' class='bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-500'>Send</button>
+          <input id='hiddenFile' type='file' accept='image/*,.pdf,.doc,.docx' class='hidden'>
+        </form>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Simple client-side mock sending
+    const form = document.getElementById('composer');
+    const textInput = document.getElementById('textInput');
+    const messagesEl = document.getElementById('messages');
+    const hiddenFile = document.getElementById('hiddenFile');
+    const attachBtn = document.getElementById('attachBtn');
+
+    attachBtn.addEventListener('click', () => hiddenFile.click());
+
+    hiddenFile.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const fileName = file.name;
+        const message = document.createElement('div');
+        message.className = 'flex items-end justify-end';
+        message.innerHTML = `
+          <div class='max-w-xs bg-green-500 text-white p-3 rounded-lg shadow flex items-center space-x-2'>
+            <span>📎</span>
+            <span class='text-sm'>${fileName}</span>
+          </div>
+        `;
+        messagesEl.appendChild(message);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+        e.target.value = '';
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = textInput.value.trim();
+      if (!text) return;
+      const message = document.createElement('div');
+      message.className = 'flex items-end justify-end';
+      message.innerHTML = `
+        <div class='max-w-xs bg-green-500 text-white p-3 rounded-lg shadow'>
+          <p class='text-sm'>${text}</p>
+          <span class='text-xs text-green-100'>Just now</span>
+        </div>
+      `;
+      messagesEl.appendChild(message);
+      textInput.value = '';
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+
+      // Mock reply from Alice
+      setTimeout(() => {
+        const reply = document.createElement('div');
+        reply.className = 'flex items-end';
+        reply.innerHTML = `
+          <img src='https://via.placeholder.com/40' alt='Alice avatar' class='w-8 h-8 rounded-full mr-2'>
+          <div class='max-w-xs bg-white p-3 rounded-lg shadow'>
+            <p class='text-sm'>Got it! This is a mock reply.</p>
+            <span class='text-xs text-gray-400'>${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+          </div>
+        `;
+        messagesEl.appendChild(reply);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
